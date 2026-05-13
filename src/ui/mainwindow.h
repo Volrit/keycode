@@ -19,10 +19,10 @@ public:
 
 private slots:
     void on_runButton_clicked();
-
     void on_problemList_currentRowChanged(int currentRow);
 
 private:
     Ui::MainWindow *ui;
 };
+
 #endif // MAINWINDOW_H

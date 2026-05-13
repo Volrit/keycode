@@ -1,4 +1,4 @@
-#include "CodeRunner.h"
+#include "coderunner.h"          // Fix: was "CodeRunner.h" (wrong case, breaks on Linux)
 
 #include <QProcess>
 #include <QFile>
@@ -11,12 +11,8 @@ QString CodeRunner::compileAndRun(const QString& code)
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
         return "Failed to create file";
 
-
-
     file.write(code.toUtf8());
     file.close();
-
-
 
     // 2. Compile with g++
     QProcess compiler;
@@ -24,7 +20,6 @@ QString CodeRunner::compileAndRun(const QString& code)
     compiler.waitForFinished();
 
     QString compileErrors = compiler.readAllStandardError();
-
     if (!compileErrors.isEmpty())
         return "Compile errors:\n" + compileErrors;
 

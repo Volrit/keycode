@@ -19,20 +19,15 @@ void CppHighlighter::highlightBlock(const QString &text)
     };
 
     for (const QString &word : keywords) {
-
         QRegularExpression expression("\\b" + word + "\\b");
-
         auto it = expression.globalMatch(text);
-
         while (it.hasNext()) {
-
             auto match = it.next();
-
             setFormat(
                 match.capturedStart(),
                 match.capturedLength(),
                 keywordFormat
-                );
+            );
         }
     }
 }

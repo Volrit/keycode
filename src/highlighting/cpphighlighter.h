@@ -12,4 +12,4 @@ protected:
     void highlightBlock(const QString &text) override;
 };
 
-#endif
+#endif // CPPHIGHLIGHTER_H

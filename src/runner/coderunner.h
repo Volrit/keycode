@@ -9,4 +9,4 @@ public:
     QString compileAndRun(const QString& code);
 };
 
-#endif
+#endif // CODERUNNER_H
